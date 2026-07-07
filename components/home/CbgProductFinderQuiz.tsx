@@ -220,7 +220,7 @@ function getRecommendation(products: Product[], answers: AnswerMap) {
 
   return productRecommendation(
     bySlug.get("funni-farm-cbg-gummies"),
-    "CBG Gummies Mixed Berry",
+    "CBG Gummies Mixed Fruit Flavors",
     "Gummies are the clearest first stop for many shoppers because the format is familiar and the label facts are easy to compare.",
   );
 }

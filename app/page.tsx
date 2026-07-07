@@ -44,7 +44,7 @@ const bestSellerSlugs = [
 
 const heroProducts = [
   {
-    label: "Mixed Berry Gummies",
+    label: "CBG Gummies Mixed Fruit Flavors",
     image: "/images/products/funni-farm-cbg-gummies-front-logo.webp",
     note: "Label-backed serving notes",
   },
