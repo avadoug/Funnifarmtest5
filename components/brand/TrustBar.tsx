@@ -57,7 +57,7 @@ export function TrustBar({
       >
         {trustItems.map((item) => (
           <div
-            className="group rounded-[1rem] border border-forest-900/10 bg-white/55 p-4 transition hover:-translate-y-0.5 hover:bg-white/80 hover:shadow-soft"
+            className="glass-card group rounded-[1rem] p-4 transition hover:-translate-y-0.5 hover:bg-cream-50/96 hover:shadow-soft"
             key={item.label}
             title={item.text}
           >

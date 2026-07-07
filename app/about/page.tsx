@@ -129,13 +129,15 @@ export default async function AboutPage() {
             sizes="100vw"
             src={farmImages.hersheyFenceWide.src}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest-900/45 via-forest-900/10 to-forest-900/55" />
+          <div className="absolute inset-0 image-scrim-strong" />
         </div>
         <div className="relative mx-auto grid min-h-[520px] max-w-7xl gap-8 px-4 py-12 text-cream-50 sm:px-6 lg:grid-cols-[1fr_.9fr] lg:px-8">
           <div className="flex flex-col justify-end">
-            <p className="font-display text-2xl italic">Hi, I&apos;m Hershey!</p>
+            <div className="image-copy-panel text-shadow-readable w-fit p-4">
+              <p className="font-display text-2xl italic">Hi, I&apos;m Hershey!</p>
+            </div>
           </div>
-          <div className="flex flex-col justify-center">
+          <div className="image-copy-panel text-shadow-readable flex flex-col justify-center p-5 md:p-6">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-harvest-300">
               Our story. Our values. Our promise.
             </p>
@@ -186,7 +188,7 @@ export default async function AboutPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {valueChips.map(([label, Icon]) => (
               <div
-                className="flex items-center gap-3 rounded-2xl border border-forest-900/10 bg-white/60 p-3"
+                className="glass-card flex items-center gap-3 rounded-2xl p-3"
                 key={label}
               >
                 <Icon aria-hidden className="size-5 text-clay" />
@@ -321,7 +323,7 @@ export default async function AboutPage() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {policies.map(({ href, icon: Icon, text, title }) => (
               <Link
-                className="rounded-seed border border-forest-900/12 bg-white/65 p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-farm"
+                className="glass-card rounded-seed p-4 transition hover:-translate-y-1 hover:shadow-farm"
                 href={href}
                 key={title}
               >
@@ -429,7 +431,7 @@ function ContactPoint({
     <div className="flex items-center gap-3">
       <Icon aria-hidden className="size-6 text-clay" />
       <div>
-        <p className="text-xs font-black uppercase tracking-[0.14em] text-forest-900/50">
+        <p className="text-xs font-black uppercase tracking-[0.14em] text-forest-900/68">
           {label}
         </p>
         <p className="font-black text-forest-900">{value}</p>

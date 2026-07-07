@@ -95,7 +95,7 @@ export function OrderRequestFlow({
               className={cn(
                 "relative rounded-seed border p-4 transition hover:-translate-y-0.5",
                 dark
-                  ? "border-cream-50/12 bg-cream-50/8"
+                  ? "dark-readable-card"
                   : "border-forest-900/10 bg-white/55",
               )}
               key={step.title}

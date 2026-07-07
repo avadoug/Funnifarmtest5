@@ -119,7 +119,7 @@ export function CbgProductFinderQuiz({ products }: { products: Product[] }) {
             ))}
           </div>
 
-          <div className="mt-6 grid gap-5 rounded-seed border border-forest-900/12 bg-white/65 p-4 md:grid-cols-[9rem_1fr]">
+          <div className="glass-card mt-6 grid gap-5 rounded-seed p-4 md:grid-cols-[9rem_1fr]">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-cream-100">
               {recommendation.product ? (
                 <Image

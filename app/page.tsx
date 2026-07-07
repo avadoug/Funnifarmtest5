@@ -295,7 +295,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative mx-auto grid min-h-[720px] max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[.95fr_1.05fr] lg:px-8">
-          <div className="flex flex-col justify-center">
+          <div className="hero-copy-panel flex flex-col justify-center self-center">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-clay">
               Premium craft CBG from a real family farm
             </p>
@@ -325,7 +325,7 @@ export default async function HomePage() {
           </div>
 
           <div className="flex items-center">
-            <div className="w-full rounded-[2rem] border border-forest-900/12 bg-cream-50/92 p-4 shadow-farm backdrop-blur md:p-5">
+            <div className="glass-card w-full rounded-[2rem] p-4 md:p-5">
               <div className="grid gap-3 md:grid-cols-[1fr_.68fr]">
                 <div className="relative min-h-[19rem] overflow-hidden rounded-[1.5rem] bg-forest-900">
                   <Image
@@ -336,8 +336,8 @@ export default async function HomePage() {
                     sizes="(min-width: 1024px) 42vw, 100vw"
                     src={farmImages.hempFieldSun.src}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/84 via-forest-900/28 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-cream-50">
+                  <div className="absolute inset-0 image-scrim-strong" />
+                  <div className="image-copy-panel text-shadow-readable absolute inset-x-4 bottom-4 p-4 text-cream-50">
                     <Badge tone="gold">Farm-tech wellness</Badge>
                     <p className="mt-3 font-display text-3xl font-black leading-tight">
                       Every batch should earn its place.
@@ -352,7 +352,7 @@ export default async function HomePage() {
                 <div className="grid gap-3">
                   {heroProducts.map((item) => (
                     <article
-                      className="grid grid-cols-[5.5rem_1fr] gap-3 rounded-seed border border-forest-900/12 bg-white/80 p-3 shadow-soft"
+                      className="glass-card grid grid-cols-[5.5rem_1fr] gap-3 rounded-seed p-3"
                       key={item.label}
                     >
                       <div className="relative aspect-square rounded-xl bg-cream-100">
@@ -582,7 +582,7 @@ function TrustTestingSection() {
           <div className="grid gap-4 sm:grid-cols-2">
             {trustPillars.map((pillar) => (
               <article
-                className="rounded-seed border border-cream-50/12 bg-cream-50/8 p-5"
+                className="dark-readable-card rounded-seed p-5"
                 key={pillar.title}
               >
                 <pillar.icon aria-hidden className="size-7 text-harvest-300" />
@@ -687,68 +687,135 @@ function BatchTransparencyPreview({ products }: { products: Product[] }) {
       </div>
 
       {products.length > 0 ? (
-        <div className="mt-7 overflow-hidden rounded-seed border border-forest-900/12 bg-cream-50 shadow-soft">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[880px] text-left text-sm">
-              <thead className="bg-forest-700 text-cream-50">
-                <tr>
-                  <Th>Product</Th>
-                  <Th>Batch ID</Th>
-                  <Th>Test date</Th>
-                  <Th>CBG potency</Th>
-                  <Th>THC level</Th>
-                  <Th>Status</Th>
-                  <Th>COA link</Th>
-                </tr>
-              </thead>
-              <tbody>
-                {products.map((product) => (
-                  <tr
-                    className="border-b border-forest-900/10 last:border-b-0"
-                    key={product.id}
-                  >
-                    <Td>
-                      <span className="font-black text-forest-900">
+        <>
+          <div className="mt-7 grid gap-3 md:hidden">
+            {products.map((product) => {
+              const hasCoa = hasBatchSpecificCoa(product);
+
+              return (
+                <article className="glass-card rounded-seed p-4" key={product.id}>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="font-display text-xl font-black leading-tight text-forest-900">
                         {product.name}
-                      </span>
-                      <span className="mt-1 block text-xs font-bold text-forest-900/56">
+                      </h3>
+                      <p className="mt-1 text-xs font-black uppercase tracking-[0.14em] text-clay">
                         {product.category}
-                      </span>
-                    </Td>
-                    <Td>{getBatchStatusLabel(product)}</Td>
-                    <Td>{getTestDate(product)}</Td>
-                    <Td>{getCbgPotency(product)}</Td>
-                    <Td>{getThcLevel(product)}</Td>
-                    <Td>
-                      <Badge tone={hasBatchSpecificCoa(product) ? "green" : "gold"}>
-                        {getCoaStatusLabel(product)}
-                      </Badge>
-                    </Td>
-                    <Td>
-                      <ButtonLink
-                        href={
-                          hasBatchSpecificCoa(product)
-                            ? product.coaUrl
-                            : `/lab-results#product-${product.slug}`
-                        }
-                        size="sm"
-                        variant={hasBatchSpecificCoa(product) ? "secondary" : "ghost"}
-                      >
-                        {hasBatchSpecificCoa(product) ? "Open COA" : "View status"}
-                      </ButtonLink>
-                    </Td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      </p>
+                    </div>
+                    <Badge tone={hasCoa ? "green" : "gold"}>
+                      {getCoaStatusLabel(product)}
+                    </Badge>
+                  </div>
+                  <dl className="mt-4 grid gap-3 text-sm">
+                    <BatchMobileDetail
+                      label="Batch ID"
+                      value={getBatchStatusLabel(product)}
+                    />
+                    <BatchMobileDetail
+                      label="Test date"
+                      value={getTestDate(product)}
+                    />
+                    <BatchMobileDetail
+                      label="CBG potency"
+                      value={getCbgPotency(product)}
+                    />
+                    <BatchMobileDetail
+                      label="THC level"
+                      value={getThcLevel(product)}
+                    />
+                  </dl>
+                  <ButtonLink
+                    className="mt-4 w-full"
+                    href={
+                      hasCoa
+                        ? product.coaUrl
+                        : `/lab-results#product-${product.slug}`
+                    }
+                    size="sm"
+                    variant={hasCoa ? "secondary" : "ghost"}
+                  >
+                    {hasCoa ? "Open COA" : "View status"}
+                  </ButtonLink>
+                </article>
+              );
+            })}
           </div>
-        </div>
+
+          <div className="mt-7 hidden overflow-hidden rounded-seed border border-forest-900/12 bg-cream-50 shadow-soft md:block">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[880px] text-left text-sm">
+                <thead className="bg-forest-700 text-cream-50">
+                  <tr>
+                    <Th>Product</Th>
+                    <Th>Batch ID</Th>
+                    <Th>Test date</Th>
+                    <Th>CBG potency</Th>
+                    <Th>THC level</Th>
+                    <Th>Status</Th>
+                    <Th>COA link</Th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.map((product) => (
+                    <tr
+                      className="border-b border-forest-900/10 last:border-b-0"
+                      key={product.id}
+                    >
+                      <Td>
+                        <span className="font-black text-forest-900">
+                          {product.name}
+                        </span>
+                        <span className="mt-1 block text-xs font-bold text-forest-900/56">
+                          {product.category}
+                        </span>
+                      </Td>
+                      <Td>{getBatchStatusLabel(product)}</Td>
+                      <Td>{getTestDate(product)}</Td>
+                      <Td>{getCbgPotency(product)}</Td>
+                      <Td>{getThcLevel(product)}</Td>
+                      <Td>
+                        <Badge tone={hasBatchSpecificCoa(product) ? "green" : "gold"}>
+                          {getCoaStatusLabel(product)}
+                        </Badge>
+                      </Td>
+                      <Td>
+                        <ButtonLink
+                          href={
+                            hasBatchSpecificCoa(product)
+                              ? product.coaUrl
+                              : `/lab-results#product-${product.slug}`
+                          }
+                          size="sm"
+                          variant={hasBatchSpecificCoa(product) ? "secondary" : "ghost"}
+                        >
+                          {hasBatchSpecificCoa(product) ? "Open COA" : "View status"}
+                        </ButtonLink>
+                      </Td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       ) : (
         <div className="mt-7 rounded-seed border border-dashed border-forest-900/20 bg-cream-50 p-6 text-sm font-semibold leading-6 text-forest-900/72">
           Batch COAs will appear here once product records are ready.
         </div>
       )}
     </section>
+  );
+}
+
+function BatchMobileDetail({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-forest-900/10 bg-cream-50/80 p-3">
+      <dt className="text-xs font-black uppercase tracking-[0.14em] text-forest-900/68">
+        {label}
+      </dt>
+      <dd className="mt-1 font-bold text-forest-900">{value}</dd>
+    </div>
   );
 }
 

@@ -36,7 +36,7 @@ export function FarmQualityChecklist() {
         <div className="grid gap-3 sm:grid-cols-2">
           {checklist.map((item) => (
             <div
-              className="flex items-center gap-3 rounded-2xl border border-cream-50/12 bg-cream-50/8 p-4 text-sm font-black text-cream-100/84"
+              className="dark-readable-card flex items-center gap-3 rounded-2xl p-4 text-sm font-black text-cream-100/90"
               key={item}
             >
               <CheckCircle2

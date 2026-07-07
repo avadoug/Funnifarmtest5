@@ -70,7 +70,7 @@ export function AgeGate() {
               I am not
             </Button>
           </div>
-          <p className="mt-4 text-center text-xs leading-5 text-forest-900/60">
+          <p className="mt-4 text-center text-xs font-semibold leading-5 text-forest-900/72">
             Products are not intended to diagnose, treat, cure, or prevent any
             disease. Review product details, ingredients, and lab results before
             use.

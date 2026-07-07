@@ -19,7 +19,8 @@ export function ProductLabelFacts({
             sizes="(min-width: 1024px) 42vw, 100vw"
             src={facts.image}
           />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-900/70 to-transparent p-5 text-cream-50">
+          <div className="absolute inset-0 image-scrim" />
+          <div className="image-copy-panel text-shadow-readable absolute inset-x-4 bottom-4 p-4 text-cream-50">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-harvest-300">
               Label photo
             </p>

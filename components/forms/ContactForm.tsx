@@ -156,7 +156,7 @@ export function ContactForm() {
 
 function TopicCheckbox({ label, name }: { label: string; name: string }) {
   return (
-    <label className="flex cursor-pointer items-center gap-2 rounded-2xl border border-forest-900/10 bg-white/60 px-3 py-2 text-sm font-bold text-forest-900/72">
+    <label className="glass-card flex cursor-pointer items-center gap-2 rounded-2xl px-3 py-2 text-sm font-bold text-forest-900/80">
       <input className="size-4 accent-forest-700" name={name} type="checkbox" />
       {label}
     </label>

@@ -169,7 +169,7 @@ export default function WhatIsCbgPage() {
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {coaSteps.map((step) => (
             <article
-              className="rounded-seed border border-cream-50/12 bg-cream-50/8 p-5"
+              className="dark-readable-card rounded-seed p-5"
               key={step.title}
             >
               <FileText aria-hidden className="size-6 text-harvest-300" />

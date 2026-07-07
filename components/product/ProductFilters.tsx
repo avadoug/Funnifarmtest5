@@ -242,7 +242,7 @@ function FilterPanel({
           Filter Products
         </p>
         <button
-          className="focus-ring rounded-full px-2 py-1 text-xs font-black text-forest-900/60 hover:bg-forest-700/10"
+          className="focus-ring rounded-full px-2 py-1 text-xs font-black text-forest-900/76 hover:bg-forest-700/10 hover:text-forest-900"
           onClick={resetFilters}
           type="button"
         >

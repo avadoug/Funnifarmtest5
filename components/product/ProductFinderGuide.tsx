@@ -88,7 +88,7 @@ export function ProductFinderGuide({ products }: { products: Product[] }) {
           <div className="mt-5 space-y-3">
             {decisions.map((decision) => (
               <Link
-                className="focus-ring group grid gap-3 rounded-2xl border border-forest-900/10 bg-white/65 p-4 transition hover:border-forest-700/35 hover:bg-white sm:grid-cols-[1fr_auto] sm:items-center"
+                className="focus-ring glass-card group grid gap-3 rounded-2xl p-4 transition hover:border-forest-700/35 hover:bg-cream-50/96 sm:grid-cols-[1fr_auto] sm:items-center"
                 href={decision.href}
                 key={decision.need}
               >
@@ -261,7 +261,7 @@ function ProductPathCard({ path }: { path: ProductPath }) {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-cream-50/12 bg-cream-50/10 p-4">
+    <div className="rounded-2xl border border-cream-50/18 bg-cream-50/14 p-4 shadow-[inset_0_1px_0_rgba(255,250,240,0.08)]">
       <p className="font-display text-3xl font-black text-harvest-300">
         {value}
       </p>

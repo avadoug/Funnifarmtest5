@@ -156,7 +156,7 @@ export default async function LabResultsPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {coaReadingSteps.map((step) => (
               <article
-                className="rounded-seed border border-cream-50/12 bg-cream-50/8 p-5"
+                className="dark-readable-card rounded-seed p-5"
                 key={step.title}
               >
                 <SearchCheck

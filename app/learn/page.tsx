@@ -305,7 +305,7 @@ function MiniPoint({
   title: string;
 }) {
   return (
-    <div className="rounded-seed border border-cream-50/12 bg-cream-50/8 p-5">
+    <div className="dark-readable-card rounded-seed p-5">
       <Icon aria-hidden className="size-5 text-harvest-300" />
       <h3 className="mt-3 font-display text-2xl font-black text-harvest-300">
         {title}

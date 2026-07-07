@@ -115,7 +115,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-forest-900/10 px-4 py-5">
-        <div className="mx-auto grid max-w-7xl gap-4 text-xs font-semibold leading-6 text-forest-900/62 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-4 text-xs font-semibold leading-6 text-forest-900/72 lg:grid-cols-[1fr_auto] lg:items-center">
           <p className="max-w-4xl">
             These products are not intended to diagnose, treat, cure, or prevent
             any disease. Effects vary by person. Consult a qualified

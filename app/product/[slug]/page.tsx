@@ -235,7 +235,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="mt-4 space-y-3">
               {faqs.map(([question, answer]) => (
                 <details
-                  className="group rounded-2xl border border-forest-900/10 bg-white/60 p-4"
+                  className="glass-card group rounded-2xl p-4"
                   key={question}
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-black text-forest-900">
@@ -308,7 +308,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 function Benefit({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
   return (
-    <div className="rounded-2xl border border-forest-900/10 bg-white/60 p-3 text-center">
+    <div className="glass-card rounded-2xl p-3 text-center">
       <Icon aria-hidden className="mx-auto size-6 text-forest-700" />
       <p className="mt-2 text-xs font-black leading-4 text-forest-900">
         {label}

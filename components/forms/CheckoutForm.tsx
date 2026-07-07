@@ -402,7 +402,7 @@ function Check({
   onChange: (value: boolean) => void;
 }) {
   return (
-    <label className="flex cursor-pointer gap-3 rounded-2xl border border-cream-50/10 bg-cream-50/8 p-4 text-sm font-bold leading-6 text-cream-100/84">
+    <label className="dark-readable-card flex cursor-pointer gap-3 rounded-2xl p-4 text-sm font-bold leading-6 text-cream-100/90">
       <input
         checked={checked}
         className="mt-1 size-4 accent-harvest-300"
